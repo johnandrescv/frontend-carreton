@@ -11,7 +11,8 @@ require_once "Classes/PHPExcel.php";
              $data[] = [
                 'id' => $worksheet->getCell('A'.$row)->getValue(),
                 'nombre' => $worksheet->getCell('B'.$row)->getValue(),
-                'descripcion' => $worksheet->getCell('C'.$row)->getValue(),
+                'categoria' => $worksheet->getCell('C'.$row)->getValue(),
+                'descripcion' => $worksheet->getCell('D'.$row)->getValue(),
              ];
         }
 echo json_encode($data);

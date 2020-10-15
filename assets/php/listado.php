@@ -13,6 +13,7 @@ require_once "Classes/PHPExcel.php";
                 'nombre' => $worksheet->getCell('B'.$row)->getValue(),
                 'categoria' => $worksheet->getCell('C'.$row)->getValue(),
                 'descripcion' => $worksheet->getCell('D'.$row)->getValue(),
+                'fav' => intval($worksheet->getCell('E'.$row)->getValue()),
              ];
         }
 echo json_encode($data);

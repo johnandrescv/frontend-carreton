@@ -354,9 +354,17 @@ button:focus {
 }
 
 .btn-white {
-    background-color: #d8d8d8;
+    background-color: #fff;
     border-radius: 25px;
+    border-color: #fff;
     color: #1b1b1c;
+}
+
+.btn-whatsapp {
+    background-color: #075E54;
+    border-radius: 25px;
+    border-color: #075E54;
+    color: #fff;
 }
 
 .btn-white:hover {
@@ -1492,7 +1500,7 @@ Scroll Top Button
 
 .slider-slide-item .slide-content h2,
 .slider-slide-item .slide-content h3 {
-    color: #d8d8d8;
+    color: #fff;
 }
 
 .slider-slide-item .slide-content h3 {

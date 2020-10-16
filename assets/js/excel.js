@@ -1,7 +1,7 @@
 $.get( "./assets/php/listado.php", ( data ) => {
     let cont = 1;
     for (const item of data) {
-        const element = '<div class="product-item"><div class="product-item__thumb"><a href="single-product.html"><img class="thumb-primary" src="./assets/productos/'+cont+'.jpg" alt="Product" /><img class="thumb-secondary" src="./assets/productos/'+cont+'.jpg" alt="Product" /></a></div><div class="product-item__content mt-3"><h4 class="title"><a href="single-product.html">'+item.nombre+'</a></h4></div></div>';
+        const element = '<div class="product-item"><div class="product-item__thumb"><a href="detail.html?id='+item.id+'"><img class="thumb-primary" src="./assets/productos/'+cont+'.jpg" alt="Product" /><img class="thumb-secondary" src="./assets/productos/'+cont+'.jpg" alt="Product" /></a></div><div class="product-item__content mt-3"><h4 class="title"><a href="detail.html?id='+item.id+'">'+item.nombre+'</a></h4></div></div>';
         if (item.fav === 1) {
             $('#fav').append(element);
         }

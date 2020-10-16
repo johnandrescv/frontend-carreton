@@ -373,6 +373,21 @@ button:focus {
     color: #FFFFFF;
 }
 
+.btn-orange {
+    background-color: #eeb644;
+    border-radius: 25px;
+    border-color: #eeb644;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btn-orange:hover {
+    background-color: #1b1b1c;
+    border-color: #1b1b1c;
+    color: #FFFFFF !important;
+    cursor: pointer;
+}
+
 .btn-brand {
     background-color: #eeb644;
     border-color: #eeb644;

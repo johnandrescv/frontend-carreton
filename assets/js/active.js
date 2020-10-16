@@ -267,6 +267,8 @@
             slidesToShow: 1,
             dots: true,
             adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
             nextArrow: '<button class="slick-next"><i class="ion-chevron-right"></i></button>',
             prevArrow: '<button class="slick-prev"><i class="ion-chevron-left"></i></button>',
             responsive: [{

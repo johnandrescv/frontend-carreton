@@ -427,18 +427,21 @@
                                 offers</p>
 
                             <div class="newsletter-form-wrap">
-                                <form action="#" method="post">
+                                <div>
                                     <div class="form-content mb-3">
-                                        <input type="text" placeholder="Ingrese sus nombres completos" />
+                                        <input id="nombres" type="text" placeholder="Nombres completos" />
                                     </div>
                                     <div class="form-content mb-3">
-                                        <input type="tel" placeholder="Ingrese su número de teléfono" />
+                                        <input id="telefono" type="tel" placeholder="Número de teléfono" />
                                     </div>
                                     <div class="form-content">
-                                        <input type="email" placeholder="Ingresa tu correo" />
-                                        <button class="btn-newsletter">Submit</button>
+                                        <input id="correo" type="email" placeholder="Correo electrónico" />
+                                        <button id="btn" onclick="contactForm()" class="btn-newsletter">Enviar</button>
                                     </div>
-                                </form>
+                                    <div id="loading" class="mt-10 ">
+										<i id="spinner" class="fa fa-spin fa-spinner fa-3x"></i>
+									</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -542,7 +545,7 @@
     <!--=== Magnific Popup Min Js ===-->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     
-    <script src="assets/js/excel.js?v=1.0.4"></script>
+    <script src="assets/js/excel.js?v=1.0.5"></script>
     <!--=== Slick Slider Min Js ===-->
     <script src="assets/js/slick.min.js"></script>
     <!--=== Nice Select Min Js ===-->
@@ -553,9 +556,11 @@
     <script src="assets/js/countdown.js"></script>
 
     <!--=== Active Js ===-->
-    <script src="assets/js/active.js?v=1.0.1"></script>
+    <script src="assets/js/active.js?v=1.0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.6.0/dist/sweetalert2.all.min.js"></script>
     <!-- endbuild -->
     <script>
+        $("#loading").hide();
         $('.tab-link').click(function () {
 
             var tabID = $(this).attr('data-tab');
@@ -571,6 +576,50 @@
                 document.getElementById('map'), { zoom: 18, center: uluru });
             var marker = new google.maps.Marker({ position: uluru, map: map });
             marker.setIcon('./assets/img/marker.png');
+        }
+
+        const contactForm = () => {
+            const flagEmail = validateEmail($('#correo').val());
+            const phonePattern = /\d{3}\d{3}\d{4}/;
+
+            if(!phonePattern.test($('#telefono').val()) || $('#telefono').val() == '') {
+                Swal.fire('Por favor ingrese un número de télefono de 10 dígitos.', 'Ejemplo: 0991255428', 'warning');
+                return;
+            }
+            
+            if ($('#nombres').val() == '') {
+                Swal.fire('Debe ingresar su nombre', 'Verifique nuevamente','error');
+                return;
+            }
+
+            if (!flagEmail || $('#correo').val() == '') {
+                Swal.fire('Correo electrónico no válido', 'Verifique nuevamente','error');
+                return;
+            }
+            $("#loading").show();
+            $("#btn").hide();
+            const body = new FormData();
+            body.append('nombres', $('#nombres').val());
+            body.append('telefono', $('#telefono').val());
+            body.append('correo', $('#correo').val());
+            $.ajax({
+            url: "./assets/php/mail.php",
+            type: "POST",
+            data: body,
+            processData: false,
+            contentType: false,
+            }).done(( data ) => {
+                if (data.error) {
+                    Swal.fire('Compruebe su conexión con internet', 'Verifique nuevamente','warning');
+                } else {
+                    Swal.fire('Muchas gracias por preferirnos', 'En las próximas horas nos estaremos contactando contigo','success');
+                    $('#nombres').val('');
+                    $('#telefono').val('');
+                    $('#correo').val('');
+                }
+                $("#loading").hide();
+                $("#btn").show();
+            });
         }
     </script>
     <script defer

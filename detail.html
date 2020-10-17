@@ -95,8 +95,11 @@
     </header>
     <!--== End Header Area ==-->
 
+    <div class="loading page-content-wrapper sp-y text-center">
+        <div class="spinner-border text-warning"></div>
+    </div>
     <!--== Start Page Header Area ==-->
-    <div class="page-header-wrap bg-img" data-bg="assets/img/bg/page-header-bg.jpg">
+    <div class="data page-header-wrap bg-img" data-bg="assets/img/bg/page-header-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -116,7 +119,7 @@
     <!--== End Page Header Area ==-->
 
     <!--== Start Page Content Wrapper ==-->
-    <div class="page-content-wrapper sp-y">
+    <div class="data page-content-wrapper sp-y">
         <div class="product-details-page-content">
             <div class="container container-wide">
                 <div class="row">
@@ -300,7 +303,8 @@
     <script src="assets/js/active.js"></script>
     <!-- endbuild -->
 
-    <script src="assets/js/detail.js?v=1.0.1"></script>
+    <script src="assets/js/detail.js?v=1.0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.6.0/dist/sweetalert2.all.min.js"></script>
     <script>
         $("#loading").hide();
         function initMap() {
@@ -335,6 +339,7 @@
             body.append('nombres', $('#nombres').val());
             body.append('telefono', $('#telefono').val());
             body.append('correo', $('#correo').val());
+            body.append('producto', productoName);
             $.ajax({
             url: "./assets/php/mail.php",
             type: "POST",

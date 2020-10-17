@@ -5,7 +5,8 @@
     $nombre = $_POST['nombres'];
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
-    $body = $nombre.' '.$telefono.' '.$correo;
+    $producto = (isset($_POST['producto'])) ? 'El usuario está interesado en el producto '.$_POST['producto'] : '';
+    $body = $nombre.' '.$telefono.' '.$correo.' '.$producto;
     try {
         $mail->isSMTP();                                        // Set mailer to use SMTP
         $mail->SMTPDebug = 0;                                 // Enable verbose debug output

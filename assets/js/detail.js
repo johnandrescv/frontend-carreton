@@ -7,8 +7,10 @@ function getParameterByName(name, url = window.location.href) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+$('.data').hide();
+$('.loading').show();
 var id = getParameterByName('id');
-console.log(id);
+var productoName;
 if (!id) {
     window.location.href = "index.html";
 }
@@ -16,6 +18,7 @@ $.get( "./assets/php/listado.php", ( data ) => {
     let cont = 1;
     for (const item of data) {
         if (item.id == id) {
+            productoName = item.nombre;
             $('.titlebreadcrumb').append(item.nombre);
             $('#thumb-gallery').append('<figure class="pro-thumb-item" data-mfp-src="assets/detail/'+cont+'.jpg"><img src="assets/detail/'+cont+'.jpg" alt="'+item.nombre+'" /></figure>');
             const arrayDesc = item.descripcion.split('|');
@@ -25,6 +28,8 @@ $.get( "./assets/php/listado.php", ( data ) => {
         }
         cont++;
     }
+    $('.data').show();
+    $('.loading').hide();   
 });
 
 const validateEmail = (email) => {

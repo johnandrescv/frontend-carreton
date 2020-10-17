@@ -38,6 +38,9 @@ body {
     margin: 0;
 }
 
+a {
+    cursor: pointer;
+}
 /* Remove text-shadow in selection highlight. */
 ::-moz-selection {
     background: #eeb644;
@@ -1401,7 +1404,7 @@ only screen and (min-width: 992px) and (max-width: 1199.98px) {
 }
 
 .widget-item .widget-title {
-    color: #d8d8d8;
+    color: #fff;
     font-size: 22px;
     font-weight: 500;
     line-height: 1;
@@ -1409,7 +1412,9 @@ only screen and (min-width: 992px) and (max-width: 1199.98px) {
     margin-bottom: 22px;
     text-decoration: underline;
 }
-
+.widget-body{
+    color: #fff;
+}
 @media only screen and (max-width: 767.98px) {
     .widget-item .widget-title {
         margin-bottom: 15px;

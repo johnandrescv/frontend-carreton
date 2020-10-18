@@ -1578,6 +1578,35 @@ Scroll Top Button
     }
 }
 
+.slider-mas .slick-arrow {
+    background-color: #eeb644;
+    border-radius: 50%;
+    color: #FFFFFF;
+    line-height: 50px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    visibility: visible;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    height: 50px;
+    width: 50px;
+    z-index: 1;
+}
+
+.slider-mas .slick-arrow.slick-next {
+    left: auto;
+    right: 0px;
+}
+
+.slider-mas .slick-arrow:hover {
+    background-color: #eeb644;
+}
+
 .slider-area-wrapper .slick-arrow {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
@@ -1589,8 +1618,7 @@ Scroll Top Button
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    opacity: 0;
-    visibility: hidden;
+    visibility: visible;
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
@@ -2480,8 +2508,8 @@ only screen and (min-width: 768px) and (max-width: 991.98px) {
 }
 
 .flash-deals-area {
-    padding: 230px 0;
-    margin-top: -130px;
+    padding: 150px 0;
+    margin-top: 0px;
     position: relative;
 }
 

@@ -342,7 +342,7 @@
             </style>
           </head>
           <body class="">
-            <span class="preheader">Hi there, Your request has been received and we will contact you shortly...</span>
+            <span class="preheader">Un nuevo usuario se ha contactado por la página web...</span>
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
               <tr>
                 <td>&nbsp;</td>
@@ -358,8 +358,8 @@
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                               <td>
-                                <a title="febo" href="https://hifebo.com">
-                                  <img style="margin-bottom: 5px;" src="https://lacasadelcarreton.com/assets/php/banner.jpg" alt="febo" />
+                                <a title="imagen" href="https://lacasadelcarreton.com">
+                                  <img style="margin-bottom: 5px;" src="https://lacasadelcarreton.com/assets/php/banner.jpg" alt="imagen" />
                                 </a>
                                 <p>Hola,</p>
                                 <p>Un cliente se ha contactado desde la página web con los siguientes datos:</p>

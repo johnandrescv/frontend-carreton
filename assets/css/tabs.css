@@ -9,23 +9,41 @@
 .tabs {
 	margin: 0;
 	padding: 0;
-    justify-content: center;
+	justify-content: center;
+	align-items: center;
     list-style: none;
     display: flex; /* [1] */
     table-layout: fixed; /* [2] */
     width: 100%; /* [3] */
 }
 .tab-link {
-	margin: 0 1%;
+	margin: 1%;
 	list-style: none;
 	padding: 10px 5px 10px 5px;
-	color: #aaa;
+	color: #000;
 	cursor: pointer;
-	font-weight: 700;
+	font-weight: bold;
+	font-size: 15px;
 	transition: all ease 0.5s;
-	border-bottom: solid 3px rgba(255,255,255,0.0);
+	border: solid 3px #000;
+	border-radius: 20px;
 	letter-spacing: 1px;
 }
+
+.bounceli {
+	animation-name: bounce-3;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+  
+  @keyframes bounce-3 {
+	0%   { transform: translateY(0); }
+	30%  { transform: translateY(-25px); }
+	50%  { transform: translateY(0); }
+	100% { transform: translateY(0); }
+}
+
 .tab-link:hover {
 	color: #FABD00;
 	border-color: #FABD00;

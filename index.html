@@ -288,15 +288,15 @@
                     <div class="wrapper">
                         <div class="tab-wrapper">
                             <ul class="tabs">
-                                <li class="tab-link bounceli  active" data-tab="torsion">Ejes de Torsión</li>
-                                <li class="tab-link bounceli" data-tab="punta">Punta de Eje</li>
-                                <li class="tab-link bounceli" data-tab="suspension">Suspensión</li>
-                                <li class="tab-link bounceli" data-tab="patas">Patas Soporte</li>
-                                <li class="tab-link bounceli" data-tab="aros">Aros con Llantas</li>
-                                <li class="tab-link bounceli" data-tab="guardafangos">Guardafangos</li>
-                                <li class="tab-link bounceli" data-tab="frenos">Sistema de Freno</li>
-                                <li class="tab-link bounceli" data-tab="accesorios">Accesorios</li>
-                                <li class="tab-link bounceli" data-tab="chasis">Chasis</li>
+                                <li class="tab-link bounceli  active" id="litorsion" data-tab="torsion">Ejes de Torsión</li>
+                                <li class="tab-link bounceli" id="lipunta" data-tab="punta">Punta de Eje</li>
+                                <li class="tab-link bounceli" id="lisuspension" data-tab="suspension">Suspensión</li>
+                                <li class="tab-link bounceli" id="lipatas" data-tab="patas">Patas Soporte</li>
+                                <li class="tab-link bounceli" id="liaros" data-tab="aros">Aros con Llantas</li>
+                                <li class="tab-link bounceli" id="liguardafangos" data-tab="guardafangos">Guardafangos</li>
+                                <li class="tab-link bounceli" id="lifrenos" data-tab="frenos">Sistema de Freno</li>
+                                <li class="tab-link bounceli" id="liaccesorios" data-tab="accesorios">Accesorios</li>
+                                <li class="tab-link bounceli" id="lichasis" data-tab="chasis">Chasis</li>
                             </ul>
                         </div>
 
@@ -610,12 +610,10 @@
     <script>
         $("#loading").hide();
         $('.tab-link').click(function () {
-
             var tabID = $(this).attr('data-tab');
-
             $(this).addClass('active').siblings().removeClass('active');
-
             $('#tab-' + tabID).addClass('active').siblings().removeClass('active');
+            sessionStorage.setItem('tab', tabID);
         });
 
         function initMap() {
@@ -668,6 +666,13 @@
                 $("#loading").hide();
                 $("#btn").show();
             });
+        }
+
+        
+        if (sessionStorage.tab) {    
+            var firstTab = $("#li"+sessionStorage.tab).attr('data-tab');
+            $("#li"+sessionStorage.tab).addClass('active').siblings().removeClass('active');
+            $('#tab-' + firstTab).addClass('active').siblings().removeClass('active');
         }
     </script>
     <script defer

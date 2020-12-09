@@ -396,6 +396,7 @@
         $mail->IsHTML(true);
         $mail->From = 'webpage@lacasadelcarreton.com';
         $mail->FromName = utf8_decode('La Casa del Carreton');
+        $mail->AddAddress('importmuentes@gmail.com');
         $mail->AddAddress('ventas@importmuentes.com');
         $mail->Subject = utf8_decode('Nuevo Cliente Interesado desde la Página Web');
         $mail->Body = $body;
